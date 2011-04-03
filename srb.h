@@ -30,7 +30,7 @@ void init();
 void setup();
 void loop();
 void mapPin(char *pin, char *port);
-void pinNum(char pin);
+char pinNum(char pin);
 
 inline void wdtHold() {
 	WDTCTL = WDTPW + WDTHOLD;
