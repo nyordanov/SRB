@@ -39,15 +39,15 @@ void gpioInterruptMode(char pin, char mode) {
 
 // gpioFlagCheck
 char gpioFlagCheck(char pin) {
-	char pin2, port;
-	pin2 = pinNum(pin);
+	char pin_num, port;
+	pin_num = pinNum(pin);
 	mapPin(&pin, &port);
 
 	switch (port) {
 		case 1:
-			return (P1IFG & pin) >> pin2;
+			return (P1IFG & pin) >> pin_num;
 		case 2:
-			return (P2IFG & pin) >> pin2;
+			return (P2IFG & pin) >> pin_num;
 		default:
 			return 0;
 	} 

@@ -62,16 +62,16 @@ void pinFunction(char pin, char mode) {
 
 // digitalRead
 char digitalRead(char pin) {
-	char port, pin2;
-	pin2 = pinNum(pin);
+	char port, pin_num;
+	pin_num = pinNum(pin);
 	mapPin(&pin, &port);
 
 	switch (port) {
 		case 1:
-			return (P1IN & pin) >> pin2;
+			return (P1IN & pin) >> pin_num;
 		break;
 		case 2:
-			return (P2IN & pin) >> pin2;
+			return (P2IN & pin) >> pin_num;
 		break;
 	}
 
